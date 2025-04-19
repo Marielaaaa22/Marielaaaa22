@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariel Royo's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Full screen sections */
+     section {
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+        /* Intro/About Me Section */
+        #about {
+            background: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* E-Certificates Section */
+        #certificates {
+            background: #fff;
+            color: #333;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #eaeaea;
+            color: #333;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header and Titles */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Simple Animation for sliding effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Menu */
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        /* About Section Flex Layout */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.about-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#certificates">E-Certificates</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+  <section id="about" class="fade-in">
+    <div class="about-container">
+        <img src="https://via.placeholder.com/200" alt="Mariel Royo"> <!-- Replace with your real image -->
+        <div class="about-text">
+            <h1>Hello, I'm Mariel Royo!</h1>
+            <p>Welcome to my personal website where I share my experiences, projects, and more!</p>
+            <p>"Aspiring Web Developer | Enthusiastic Learner | Passionate about technology and creative solutions. I'm diving into the world of web development, one project at a time!"</p>
+        </div>
+    </div>
+</section>
+
+    <!-- E-Certificates Section -->
+    <section id="certificates" class="fade-in">
+        <h2>E-Certificates</h2>
+        <p>Here are some of the certifications I’ve earned from various webinars and courses:</p>
+        <!-- Example E-Certificate List -->
+        <ul>
+            <li>Web Development 101 - Certification</li>
+            <li>Advanced Python Programming - Certification</li>
+            <li>Data Analysis with Excel - Certification</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+        <h2>My Projects</h2>
+        <p>These are some of the projects I have worked on:</p>
+        <ul>
+            <li>Website for Local Business</li>
+            <li>Online Learning Platform</li>
+            <li>Weather Prediction System</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out!</p>
+        <p>Email: mariel@example.com</p>
+    </section>
+    
+    <!-- Add some basic animations to show sections -->
+    <script>
+        // Detecting when each section comes into view and applying the fade-in animation
+        const sections = document.querySelectorAll("section");
+
+        const options = {
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
