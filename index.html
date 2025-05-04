@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariel Royo's Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         /* Basic reset */
         * {
@@ -16,6 +17,14 @@
         body {
             font-family: 'Lora', serif;
             line-height: 1.6;
+              margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, maroon, black, white);
+    color: #fff;
+    min-height: 100vh;
+}
+
+}
         }
 
         /* Smooth scroll behavior */
@@ -32,6 +41,13 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.3); /* optional dark overlay */
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
 }
 
         /* Intro/About Me Section */
@@ -87,29 +103,39 @@
             }
         }
 
-        /* Navigation Menu */
-        nav {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-        }
+      nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-        nav ul {
-            list-style-type: none;
-        }
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 15px 0;
+    margin: 0;
+}
 
-        nav ul li {
-            margin: 10px 0;
-        }
+nav ul li {
+    margin: 0 20px;
+}
 
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        /* About Section Flex Layout */
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: maroon;
+}
+
 .about-container {
     display: flex;
     align-items: center;
@@ -132,6 +158,100 @@
     max-width: 600px;
     text-align: left;
 }
+.eyy{
+    font-size: 12px;
+    display: flex;
+   
+}
+.glow-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.glow-img {
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px white;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Animation keyframes */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    }
+    100% {
+        box-shadow: 0 0 30px white, 0 0 60px white, 0 0 90px white;
+    }
+}
+
+
+/* Animation keyframes */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px maroon, 0 0 20px maroon, 0 0 30px black;
+    }
+    100% {
+        box-shadow: 0 0 30px maroon, 0 0 50px black, 0 0 70px maroon;
+    }
+}
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    color: gold;
+}
+
+   #certificates {
+        background: #fff;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .certificate-item {
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #333;
+        margin: 10px 0;
+    }
+
+    .certificate-item:hover {
+        color: #007BFF;
+    }
+
+    /* Sliding Certificates */
+    .certificate-details {
+        display: none;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: transform 0.5s ease;
+    }
+
+    .certificate-details.show {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .certificate-details.hidden {
+        transform: translateX(-100%);
+    }
+</style>
+
 
     </style>
 </head>
@@ -147,36 +267,88 @@
     </nav>
 
   <section id="about" class="fade-in">
-    <div class="about-container">
-        <img src="https://via.placeholder.com/200" alt="Mariel Royo"> <!-- Replace with your real image -->
+    <div class="about-container" class="glow-img-container">
+        <img src="ella.jpg"> <!-- Replace with your real image -->
         <div class="about-text">
             <h1>Hello, I'm Mariel Royo!</h1>
-            <p>Welcome to my personal website where I share my experiences, projects, and more!</p>
-            <p>"Aspiring Web Developer | Enthusiastic Learner | Passionate about technology and creative solutions. I'm diving into the world of web development, one project at a time!"</p>
+            <p class="eyy" align="center">Welcome to my personal website where I share my experiences, projects, and more!</p>
+            <p class="eyy">"Aspiring Web Developer | Enthusiastic Learner | Passionate about technology and creative solutions. I'm diving into the world of web development, one project at a time!"</p><br>
+                  <div class="social-links">
+    <a href="https://web.facebook.com/marielroyo22" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/Marielaaaa22" target="_blank"><i class="fab fa-github"></i></a>
+</div>
         </div>
+  
+
     </div>
 </section>
+<!-- E-Certificates Section -->
+<section id="certificates" class="fade-in">
+  <h2>E-Certificates</h2>
+  <p>Here are some of the certifications I’ve earned from various webinars and courses:</p>
 
-    <!-- E-Certificates Section -->
-    <section id="certificates" class="fade-in">
-        <h2>E-Certificates</h2>
-        <p>Here are some of the certifications I’ve earned from various webinars and courses:</p>
-        <!-- Example E-Certificate List -->
-        <ul>
-            <li>Web Development 101 - Certification</li>
-            <li>Advanced Python Programming - Certification</li>
-            <li>Data Analysis with Excel - Certification</li>
-        </ul>
-    </section>
+  <div class="certificate-gallery">
+    <div class="certificate-card">
+      <img src="cyber.png" alt="Web Development 101 Certificate">
+      <p>RA 10173 Explained: Introduction to Data Privacy and Security</p>
+    </div>
+    <div class="certificate-card">
+      <img src="python.jpg" alt="Advanced Python Programming Certificate">
+      <p>Fundamentals of Python Programming</p>
+    </div>
+    <div class="certificate-card">
+      <img src="path/to/excel-certificate.jpg" alt="Data Analysis with Excel Certificate">
+      <p>Microsoft Excel</p>
+    </div>
+    <!-- Add more as needed -->
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .certificate-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .certificate-card {
+    text-align: center;
+    max-width: 300px;
+    border: 2px solid maroon;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #fff8f0;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .certificate-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .certificate-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: maroon;
+  }
+</style>
+
+
+
 
     <!-- Projects Section -->
     <section id="projects" class="fade-in">
         <h2>My Projects</h2>
         <p>These are some of the projects I have worked on:</p>
         <ul>
-            <li>Website for Local Business</li>
-            <li>Online Learning Platform</li>
-            <li>Weather Prediction System</li>
+            <li>SakaMart</li>
+            <li>Starlite Online Ticketing System</li>
+            <li>Clinic Appointment Scheduling System</li>
+            <li>APT prospectus</li>
         </ul>
     </section>
 
@@ -184,7 +356,7 @@
     <section id="contact" class="fade-in">
         <h2>Contact Me</h2>
         <p>If you'd like to get in touch, feel free to reach out!</p>
-        <p>Email: mariel@example.com</p>
+        <p>Email: boldamariel14@gmail.com</p>
     </section>
     
     <!-- Add some basic animations to show sections -->
